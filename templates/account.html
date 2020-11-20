@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <div class="login-form" method="post">
+        {% csrf_token%}
+        <p class="message"><h3>{{ user.username }}</h3></p>
+      <p class="message"></p>
+    </div>
+  </div>
+</div>
+    <div class="login-page">
+  <div class="form">
+    <div class="login-form" method="post">
+        {% csrf_token%}
+            {% for a in data_a %}
+                {% if a.username == user.username %}
+        <p class="message"></p>
+                    <p class="message">Название продукта :{{ a.product }}<br></p>
+        <p class="message">Количество :{{ a.count }}<br></p>
+        <p class="message">Цена за сделку :{{ a.cost }}<br></p>
+        <p class="message">Дата :{{ a.date }}<br></p>
+                    --------------------------------------------------
+                {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="post">
+      <p class="message">Вы вышли <a href="{% url 'signup_url' %}">Зайти снова</a></p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

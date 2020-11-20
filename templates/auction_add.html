@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <form class="login" method="post">
+    {% csrf_token%}
+    <select name="product" id="select-box1" class="select">
+           {% for product in data_p %}
+      <option value="{{ product.name }}">{{ product.name }}</option>
+           {% endfor %}
+    </select>
+      <input name="count"  type="text" placeholder="количество"/>
+      <input name="cost"  type="text" placeholder="стоймость"/>
+       <select name="username" id="select-box1" class="select">
+           {% for user in data_u %}
+      <option value="{{ user.username }}">{{ user.username }}</option>
+           {% endfor %}
+    </select>
+      <input name="date"  type="text" placeholder="дата YYYY-mm-dd"/>
+      <button>Подтвердить</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'auctions.html' %}
+{% block body %}
+<ul class="list4b" style="margin-left: 10%">
+    {% for product in data_p %}
+        {% if product.count  > 0 %}
+    <li>Название :{{ product.name }}<br></li>
+        Количество :{{ product.count }}<br>
+        Цена за 1 шт :{{ product.cost }}<br>
+        Производитель :{{ product.farm }}<br>
+            <a href="{% url 'product_edit_url' product.id %}" class="button10">Изменить товар</a>
+        <a href="{% url 'product_delete_url' product.id %}" class="button10">Снять с продажи</a>
+        <a href="{% url 'auction_add_url' %}" class="button10">Продано</a>
+        {% endif %}
+        {%endfor%}
+</ul>
+{% endblock %}

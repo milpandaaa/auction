@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" method="post">
+        {% csrf_token%}
+      <input name="username" type="text" placeholder="username"/>
+      <input name="password" type="password" placeholder="password"/>
+      <button>Войти</button>
+      <p class="message">Еще не зарегистрированы? <a href="{% url 'signup_url' %}">Регистация</a></p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

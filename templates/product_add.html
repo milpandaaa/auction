@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <form class="login" method="post">
+    {% csrf_token%}
+    <input name="name"  type="text" placeholder="название"/>
+      <input name="count"  type="text" placeholder="количество"/>
+      <input name="cost"  type="text" placeholder="стоймость"/>
+       <select name="farm" id="select-box1" class="select">
+           {% for farm in data_f %}
+      <option value="{{ farm.name }}">{{ farm.name }}</option>
+           {% endfor %}
+    </select>
+      <button>Подтвердить</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

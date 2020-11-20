@@ -1,0 +1,12 @@
+{% extends 'auctions.html' %}
+{% block body %}
+<ul class="list4b" style="margin-left: 10%">
+    {% for farm in data_f %}
+    <li>Название фермы :{{ farm.name }}<br></li>
+        Адресс :{{ farm.address }}<br>
+        Контактный номер :{{ farm.phone_number }}<br>
+        Директор :{{ farm.name_directors }}<br>
+        Контактный номер с директором фермы :{{ farm.phone_directors }}<br>
+        {%endfor%}
+</ul>
+{% endblock %}
